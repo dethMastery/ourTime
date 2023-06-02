@@ -18,20 +18,39 @@ const posts = (await getCollection('blog')).sort(
 	</head>
 	<body class="!w-screen min-h-screen !p-0">
 		<Header />
-		<main class="w-screen">
-			<section>
-				<ul>
-					{
-						posts.map((post) => (
-							<li>
-								<FormattedDate date={post.data.pubDate} />
-								<a href={`/blog/${post.slug}/`}>{post.data.title}</a>
-							</li>
-						))
-					}
-				</ul>
-			</section>
+		<main class="w-[80%] min-h-screen mx-auto text-center md:w-full">
+			<div class="pt-4 w-full h-full flex flex-row justify-center">
+				{
+					posts.map((post) => (
+						<div class=" border-pastel-black border-[1px] rounded-[5px] bg-whitesmoke">
+							<div class="w-full p-6">
+								<div class="w-full h-[22rem] !bg-center !bg-cover !bg-no-repeat border-[#959797] border-[1px]" style={`background: url(${post.data.heroImage});`}></div>
+							</div>
+							<div class="min-w-[18rem] pb-4 poraloid-card">
+								<h1 class="px-4 w-full text-center text-2xl">
+									{post.data.description}
+								</h1>
+								<p class="px-4 w-full text-pastel-black opacity-80 text-right">
+									<FormattedDate date={post.data.pubDate} />
+								</p>
+							</div>
+						</div>
+					))
+				}
+
+				<!-- <li>
+					<FormattedDate date={post.data.pubDate} />
+					<a href={`/blog/${post.slug}/`}>{post.data.title}</a>
+				</li> -->
+			</div>
 		</main>
 		<Footer />
 	</body>
 </html>
+<style>
+	body {
+		background: #00b4db; /* fallback for old browsers */
+		background: -webkit-linear-gradient(45deg, #0083b0, #00b4db); /* Chrome 10-25, Safari 5.1-6 */
+		background: linear-gradient(45deg, #0083b0, #00b4db); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	}
+</style>
