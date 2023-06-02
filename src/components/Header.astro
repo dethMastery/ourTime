@@ -3,23 +3,14 @@ import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE } from '../consts';
 ---
 
-<header>
-	<h2>
+<header class="flex flex-row w-full bg-pastel-black text-whitesmoke">
+	<div class="w-full p-4">
 		{SITE_TITLE}
-	</h2>
-	<nav>
-		<HeaderLink href="/">Home</HeaderLink>
-		<HeaderLink href="/blog">Blog</HeaderLink>
-		<HeaderLink href="/about">About</HeaderLink>
-		<HeaderLink href="https://twitter.com/astrodotbuild" target="_blank">Twitter</HeaderLink>
-		<HeaderLink href="https://github.com/withastro/astro" target="_blank">GitHub</HeaderLink>
-	</nav>
+	</div>
+	<div class="w-full justify-end text-right flex flex-row">
+		<HeaderLink href="/" class="p-4 block duration-300 hover:opacity-60">Home</HeaderLink>
+		<HeaderLink href="/about" class="p-4 block duration-300 hover:opacity-60">About</HeaderLink>
+		<HeaderLink href="https://twitter.com/georgeKdeterk" target="_blank" class="p-4 block duration-300 hover:opacity-60">Twitter</HeaderLink>
+		<HeaderLink href="https://github.com/dethMastery" target="_blank" class="p-4 block duration-300 hover:opacity-60">GitHub</HeaderLink>
+	</div>
 </header>
-<style>
-	header {
-		margin: 0em 0 2em;
-	}
-	h2 {
-		margin: 0.5em 0;
-	}
-</style>
