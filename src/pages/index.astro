@@ -19,14 +19,14 @@ const posts = (await getCollection('blog')).sort(
 	<body class="!w-screen min-h-screen !p-0">
 		<Header />
 		<main class="w-[80%] min-h-screen mx-auto text-center md:w-full">
-			<div class="pt-4 w-full h-full flex flex-row justify-center gap-4">
+			<div class="py-4 w-full h-full flex flex-row flex-wrap justify-center gap-4">
 				{
 					posts.map((post) => (
 						<div class=" border-pastel-black border-[1px] rounded-[5px] bg-whitesmoke">
 							<div class="w-full p-6">
 								<div class="w-full h-[22rem] !bg-center !bg-cover !bg-no-repeat border-[#959797] border-[1px]" style={`background: url(${post.data.heroImage});`}></div>
 							</div>
-							<div class="w-[18rem] pb-4 poraloid-card">
+							<div class="w-[20rem] pb-4 poraloid-card">
 								<h1 class="px-4 w-full text-center text-2xl">
 									{post.data.description}
 								</h1>
@@ -37,11 +37,6 @@ const posts = (await getCollection('blog')).sort(
 						</div>
 					))
 				}
-
-				<!-- <li>
-					<FormattedDate date={post.data.pubDate} />
-					<a href={`/blog/${post.slug}/`}>{post.data.title}</a>
-				</li> -->
 			</div>
 		</main>
 		<Footer />
