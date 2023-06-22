@@ -26,10 +26,10 @@ const posts = (await getCollection('blog')).sort(
 							<div class="w-full p-6">
 								<div class="w-full h-[22rem] !bg-center !bg-cover !bg-no-repeat border-[#959797] border-[1px]" style={`background: url(${post.data.heroImage});`}></div>
 							</div>
-							<div class="w-[20rem] pb-4 poraloid-card">
-								<h1 class="px-4 w-full text-center text-2xl">
-									{post.data.description}
-								</h1>
+							<div class="w-[20rem] pb-4 polaroid-card">
+								<a href={(post.data.description != 'false') ? `memories/${post.slug}` : '#'} class="block px-4 w-full text-center text-2xl">
+									{post.data.title}
+								</a>
 								<p class="px-4 w-full text-pastel-black opacity-80 text-right">
 									<FormattedDate date={post.data.pubDate} />
 								</p>
