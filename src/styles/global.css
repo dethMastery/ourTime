@@ -9,6 +9,6 @@
   font-family: 'IBM Plex Sans Thai', sans-serif;
 }
 
-.poraloid-card > * {
+.polaroid-card, .polaroid-card *  {
   font-family: 'Itim', cursive !important;
 }
