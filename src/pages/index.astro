@@ -21,7 +21,7 @@ const posts = (await getCollection('blog')).sort(
 		<main class="w-[80%] min-h-screen mx-auto text-center md:w-full">
 			<div class="py-4 w-full h-full flex flex-row flex-wrap justify-center gap-4">
 				{
-					posts.map((post) => (
+					posts.reverse().map((post) => (
 						<div class=" border-pastel-black border-[1px] rounded-[5px] bg-whitesmoke">
 							<div class="w-full p-6">
 								<div class="w-full h-[22rem] !bg-center !bg-cover !bg-no-repeat border-[#959797] border-[1px]" style={`background: url(${post.data.heroImage});`}></div>
