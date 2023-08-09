@@ -1,17 +1,40 @@
 ---
 import Layout from '../layouts/BlogPost.astro';
+
+const LINK_CLASS = `text-pastel-black underline duration-300 hover:opacity-60 hover:decoration-dashed`
+const LIST_CLASS = `py-2`
 ---
 
 <Layout
 	title="About Me"
-	description="Lorem ipsum dolor sit amet"
-	pubDate={new Date('August 08 2021')}
-	updatedDate={new Date('August 08 2022')}
+	description=""
+	pubDate={new Date('June 02, 2023')}
+	updatedDate={new Date('August 10, 2023')}
 	heroImage="/placeholder-about.jpg"
 >
 	<p>
 		This is a website that used to show my memory w/ my lover. Just watch and enjoy it :) (if u don't have one and want to say something bad about me.. just go fucked urself)
 	</p>
+
+	<br>
+
+	<div class="w-[80%] mx-auto">
+		<h2 class="text-3xl font-semibold py-2 text-center">
+			Links
+		</h2>
+		<ul class="w-[80%] md:w-[50%] mx-auto list-disc">
+			<li class={LIST_CLASS}>
+				<a href="https://github.com/dethMastery/ourTime" target="_blank" class={LINK_CLASS}>
+					Repository
+				</a>
+			</li>
+			<li class={LIST_CLASS}>
+				<a href="https://suphakit.net/contact" target="_blank" class={LINK_CLASS}>
+					Contact
+				</a>
+			</li>
+		</ul>
+	</div>
 
 	<br />
 
